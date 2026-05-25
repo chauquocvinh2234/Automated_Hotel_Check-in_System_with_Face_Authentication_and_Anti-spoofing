@@ -154,16 +154,16 @@ The 2x2 comparison matrix below visualizes the cosine similarity distributions a
 
 | Evaluation Metric | Baseline (Softmax Loss) | Proposed (ArcFace Loss) |
 | :---: | :---: | :---: |
-| **Similarity Histogram** | <img src="images/lfw_softmax_histogram.png" width="400" alt="LFW Softmax Histogram"> | <img src="images/lfw_arcface_histogram.png" width="400" alt="LFW ArcFace Histogram"> |
-| **t-SNE Clustering** | <img src="images/lfw_softmax_tsne.png" width="400" alt="LFW Softmax t-SNE"> | <img src="images/lfw_arcface_tsne.png" width="400" alt="LFW ArcFace t-SNE"> |
+| **Similarity Histogram** | <img src="Images/lfw_softmax_histogram.jpg" width="400" alt="LFW Softmax Histogram"> | <img src="Images/lfw_arcface_histogram.jpg" width="400" alt="LFW ArcFace Histogram"> |
+| **t-SNE Clustering** | <img src="Images/lfw_softmax_tsne.jpg" width="400" alt="LFW Softmax t-SNE"> | <img src="Images/lfw_arcface_tsne.jpg" width="400" alt="LFW ArcFace t-SNE"> |
 
 #### B. Celebrity Face Images (Kaggle Dataset) Performance
 The evaluation matrix below demonstrates the model robustness and domain generalization capabilities on the independent Celebrity Face Images dataset:
 
 | Evaluation Metric | Baseline (Softmax Loss) | Proposed (ArcFace Loss) |
 | :---: | :---: | :---: |
-| **Similarity Histogram** | <img src="images/cbf_softmax_histogram.png" width="400" alt="CBF Softmax Histogram"> | <img src="images/cbf_arcface_histogram.png" width="400" alt="CBF ArcFace Histogram"> |
-| **t-SNE Clustering** | <img src="images/cbf_softmax_tsne.png" width="400" alt="CBF Softmax t-SNE"> | <img src="images/cbf_arcface_tsne.png" width="400" alt="CBF ArcFace t-SNE"> |
+| **Similarity Histogram** | <img src="Images/cbf_softmax_histogram.jpg" width="400" alt="CBF Softmax Histogram"> | <img src="Images/cbf_arcface_histogram.jpg" width="400" alt="CBF ArcFace Histogram"> |
+| **t-SNE Clustering** | <img src="Images/cbf_softmax_tsne.jpg" width="400" alt="CBF Softmax t-SNE"> | <img src="Images/cbf_arcface_tsne.jpg" width="400" alt="CBF ArcFace t-SNE"> |
 
 ### 2. System Latency Metrics (Processing Speed)
 The table below details the execution time benchmarks measured end-to-end on our local server deployment environment:
