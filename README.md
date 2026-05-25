@@ -165,6 +165,11 @@ The evaluation matrix below demonstrates the model robustness and domain general
 | **Similarity Histogram** | <img src="Images/cbf_softmax_histogram.jpg" width="400" alt="CBF Softmax Histogram"> | <img src="Images/cbf_arcface_histogram.jpg" width="400" alt="CBF ArcFace Histogram"> |
 | **t-SNE Clustering** | <img src="Images/cbf_softmax_tsne.jpg" width="400" alt="CBF Softmax t-SNE"> | <img src="Images/cbf_arcface_tsne.jpg" width="400" alt="CBF ArcFace t-SNE"> |
 
+#### C. Anti-spoofing Demos
+| Scenario 1: Real-face | Scenario 2: Fake-face |
+| :---: | :---: |
+| <video src="https://github.com/user-attachments/assets/0a08a98a-7da5-4600-bb0b-0cddab9b4799" width="400" controls></video> | <video src="https://github.com/user-attachments/assets/37465e69-eed4-414f-aae9-39a5d04d6f13" width="400" controls></video> |
+
 ### 2. System Latency Metrics (Processing Speed)
 The table below details the execution time benchmarks measured end-to-end on our local server deployment environment:
 
