@@ -117,6 +117,52 @@ This is the interactive client-side user interface.
    ```
    *Open your browser and navigate to `http://localhost:5173` to explore the system!*
 
+## ⚙️ System Architecture & Workflow
+
+The system is engineered following a **Microservices Architecture** to guarantee clean isolation between standard business logic and compute-heavy AI tasks. 
+
+### 1. High-Level Architecture Diagram
+![System Architecture Diagram](Images/system_architecture.jpg)
+
+### 2. Funnel-based AI Processing Pipeline
+To optimize processing speed, the system integrates **Google MediaPipe** on the client side to track and crop faces directly in the browser (~22 FPS). Once sent to the server, the image passes through a sequential funnel pipeline:
+![FAS and ArcFace Integrated Pipeline](Images/pipeline_workflow.jpg)
+
+* **Step 1:** The FAS module validates if the face is live. If a spoof attack is detected (threshold score > 0.620), the pipeline terminates immediately with a `403 Forbidden` status to conserve server computing power.
+* **Step 2:** Only verified "Real" faces are passed to the ArcFace module to extract the 512-D embedding and run a Cosine Similarity match against the registration templates stored in MongoDB.
+
+---
+
+---
+
+## 🛠️ Technology Stack
+* **Frontend Kiosk:** React, Google MediaPipe Face Detection
+* **Core Business Backend:** Node.js, Express REST API
+* **AI Inference Server:** Python, Flask API, PyTorch, OpenCV
+* **Database Engine:** MongoDB (storing user metadata and 512-D vector embeddings)
+
+---
+
+## 📈 Experimental Results & Performance
+
+### 1. Model Accuracy Evaluation
+* **Face Anti-Spoofing (FAS):** Achieved a top **Test Accuracy of 99.77%** after multi-stage transfer learning and fine-tuning on the evaluation dataset.
+* **ArcFace Verification:** Demonstrated a significantly larger inter-class discrepancy and minimal cluster overlap compared to traditional Softmax baselines on both standard LFW and custom benchmark datasets.
+
+![t-SNE Clustering Comparison: Softmax vs ArcFace](images/tsne_comparison.png)
+
+### 2. System Latency Metrics (Processing Speed)
+The table below details the execution time benchmarks measured end-to-end on our local server deployment environment:
+
+| Step / Module | Underlying Technology | Enrollment Scenario <br> (High-Res Image Upload) | Check-in Scenario <br> (Real-Time Webcam) | Operational Notes |
+| :--- | :---: | :---: | :---: | :--- |
+| **Frontend Tracking** | MediaPipe | N/A | 45.63 ms | Runs client-side directly inside the browser |
+| **Image Decoding** | OpenCV | 35.34 ms | 8.67 ms | Registration images are ~4x larger in file size |
+| **Feature Extraction** | InsightFace (ArcFace) | 694.37 ms | 237.00 ms | Enrollment prioritizes depth; Check-in prioritizes speed |
+| **Liveness Check** | ResNet-18 | 125.15 ms | 37.52 ms | Larger crop windows demand slightly higher processing |
+| **Total Backend Latency** | Python/Flask | **858.88 ms** | **284.49 ms** | Check-in pipeline runs roughly **3x faster** than registration |
+| **Total End-to-End Latency** | System-wide | **~0.90 seconds** | **~0.33 seconds** | Delivers an "instant-feedback" zero-latency user experience |
+
 ---
 ## 📂 Folder Structure
 
