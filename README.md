@@ -240,7 +240,7 @@ Hotel_Check-in_System/
 
 ---
 ## 🤝 Contributors
-### 👤 Châu Quốc Vinh (Vince)
+### 👤 Châu Quốc Vinh
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/chauquocvinh2234)
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:vinhit220304@gmail.com)
 
