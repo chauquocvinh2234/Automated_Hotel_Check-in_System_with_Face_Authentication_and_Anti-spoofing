@@ -133,8 +133,6 @@ To optimize processing speed, the system integrates **Google MediaPipe** on the 
 
 ---
 
----
-
 ## 🛠️ Technology Stack
 * **Frontend Kiosk:** React, Google MediaPipe Face Detection
 * **Core Business Backend:** Node.js, Express REST API
@@ -239,24 +237,6 @@ Hotel_Check-in_System/
                 ├── pages/                          # Page components (Login, Booking, Admin Dashboard)
                 └── util/                           # Utility and helper functions
 ```
-
-### Component Summaries
-
-#### 1. `FaceAntiSpoofing`
-* **Technology**: Python, PyTorch, Jupyter Notebook.
-* **Role**: Model research and development. It contains the logic to train the deep learning model capable of distinguishing between real human faces and spoofing attempts (e.g., photos, videos, masks).
-
-#### 2. `FaceAuthorization_MicroService`
-* **Technology**: Python, Flask, PyTorch.
-* **Role**: A lightweight microservice that loads the trained PyTorch anti-spoofing model (`.pth`) and serves an API endpoint. When the main backend receives a check-in image, it queries this microservice to verify face authenticity before checking the user in.
-
-#### 3. `backend`
-* **Technology**: Node.js, Express, MongoDB/Mongoose.
-* **Role**: The main application server. It orchestrates user registration, booking flow, room key generation, and coordinates authentication checks with the Face Authorization Microservice.
-
-#### 4. `frontend`
-* **Technology**: React, Vite, CSS.
-* **Role**: The interactive client-side user interface. Provides dashboards for guests to check in using their camera, and administration screens for hotel employees to monitor room occupancy and booking logs.
 
 ---
 ## 🤝 Contributors
