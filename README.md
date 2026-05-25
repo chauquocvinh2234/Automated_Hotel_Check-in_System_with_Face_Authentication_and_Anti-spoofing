@@ -240,10 +240,12 @@ Hotel_Check-in_System/
 
 ---
 ## 🤝 Contributors
-- Châu Quốc Vinh
-  + [Github](https://github.com/chauquocvinh2234)
-  + [Gmail](vinhit220304@gmail.com)
-- Vũ Trọng Nghĩa
-  + [Github](https://github.com/TrongNghia041104)
-  + [Gmail](nghia.hpotaku04@gmail.com)
-- Trần Đặng Thiên Phúc
+### 👤 Châu Quốc Vinh (Vince)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/chauquocvinh2234)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:vinhit220304@gmail.com)
+
+### 👤 Vũ Trọng Nghĩa
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/TrongNghia041104)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nghia.hpotaku04@gmail.com)
+
+### 👤 Trần Đặng Thiên Phúc
