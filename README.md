@@ -1,4 +1,10 @@
 # Automated Hotel Check-in System with Face Authentication and Anti-spoofing
+
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
+![Framework](https://img.shields.io/badge/Framework-React%20%7C%20Node.js%20%7C%20Flask-lightgrey)
+![Deep Learning](https://img.shields.io/badge/DL-PyTorch%20%7C%20InsightFace-orange)
+![Database](https://img.shields.io/badge/Database-MongoDB-green)
+
 ---
 
 ## 📌 Project Overview
