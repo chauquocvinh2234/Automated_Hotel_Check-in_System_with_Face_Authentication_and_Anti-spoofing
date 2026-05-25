@@ -147,9 +147,23 @@ To optimize processing speed, the system integrates **Google MediaPipe** on the 
 
 ### 1. Model Accuracy Evaluation
 * **Face Anti-Spoofing (FAS):** Achieved a top **Test Accuracy of 99.77%** after multi-stage transfer learning and fine-tuning on the evaluation dataset.
-* **ArcFace Verification:** Demonstrated a significantly larger inter-class discrepancy and minimal cluster overlap compared to traditional Softmax baselines on both standard LFW and custom benchmark datasets.
+* **ArcFace Verification:** Minimizes intra-class variance while maximizing inter-class margins, completely eliminating the feature-space overlap visible in standard Softmax baselines.
 
-![t-SNE Clustering Comparison: Softmax vs ArcFace](images/tsne_comparison.png)
+#### A. LFW Benchmark Performance
+The 2x2 comparison matrix below visualizes the cosine similarity distributions and the 2D t-SNE dimensional reductions for both loss functions on the standard LFW dataset:
+
+| Evaluation Metric | Baseline (Softmax Loss) | Proposed (ArcFace Loss) |
+| :---: | :---: | :---: |
+| **Similarity Histogram** | <img src="images/lfw_softmax_histogram.png" width="400" alt="LFW Softmax Histogram"> | <img src="images/lfw_arcface_histogram.png" width="400" alt="LFW ArcFace Histogram"> |
+| **t-SNE Clustering** | <img src="images/lfw_softmax_tsne.png" width="400" alt="LFW Softmax t-SNE"> | <img src="images/lfw_arcface_tsne.png" width="400" alt="LFW ArcFace t-SNE"> |
+
+#### B. Celebrity Face Images (Kaggle Dataset) Performance
+The evaluation matrix below demonstrates the model robustness and domain generalization capabilities on the independent Celebrity Face Images dataset:
+
+| Evaluation Metric | Baseline (Softmax Loss) | Proposed (ArcFace Loss) |
+| :---: | :---: | :---: |
+| **Similarity Histogram** | <img src="images/cbf_softmax_histogram.png" width="400" alt="CBF Softmax Histogram"> | <img src="images/cbf_arcface_histogram.png" width="400" alt="CBF ArcFace Histogram"> |
+| **t-SNE Clustering** | <img src="images/cbf_softmax_tsne.png" width="400" alt="CBF Softmax t-SNE"> | <img src="images/cbf_arcface_tsne.png" width="400" alt="CBF ArcFace t-SNE"> |
 
 ### 2. System Latency Metrics (Processing Speed)
 The table below details the execution time benchmarks measured end-to-end on our local server deployment environment:
