@@ -1,11 +1,7 @@
 # Automated Hotel Check-in System with Face Authentication and Anti-spoofing
-
-> [!NOTE]  
-> This is an automated hotel check-in system integrated with Face Recognition and Biometric Liveness Detection (Anti-spoofing). The project is developed to optimize the check-in workflow at hotels, enhance security, and deliver a seamless, contactless self-service experience for guests.
-
 ---
 
-## 📖 Project Overview
+## 📌 Project Overview
 
 The system provides an end-to-end solution from online room booking and room management to automated self-service check-in using facial recognition. The core of the system is real-time dual-layer biometric authentication:
 1. **Liveness Detection (Anti-spoofing):** Utilizes a custom-trained **ResNet-18** Deep Learning model to detect presentation attacks (spoofing attempts) such as printed photos, replay attacks via screens (mobiles/tablets), or masks.
@@ -23,37 +19,7 @@ The system provides an end-to-end solution from online room booking and room man
 
 ---
 
-## 🏗️ System Architecture
-
-The project is built on a **Microservices** architecture, cleanly separating core services:
-
-```text
-┌────────────────┐        HTTP Requests        ┌───────────────────────┐
-│                ├────────────────────────────>│  Node.js Express API  │
-│ React Frontend │                             │  (Main Backend & DB)  │
-│  (Port 5173)   │<────────────────────────────┤      (Port 3000)      │
-└───────┬────────┘        Response Json        └───────────┬───────────┘
-        │                                                  │
-        │ Send Base64 Face Image                           │ Query / Match Embeddings
-        │ (Liveness & Authenticate)                        │
-        ▼                                                  ▼
-┌──────────────────────────────────────────────────────────────────────┐
-│                  Python AI Authentication Microservice               │
-│                  (Flask + PyTorch + InsightFace)                     │
-│                            (Port 5000)                               │
-└──────────────────────────────────────────────────────────────────────┘
-```
-
-* **Frontend:** React, Vite, TailwindCSS v4, HeadlessUI, MediaPipe Tasks-Vision.
-* **Main Backend:** Node.js, Express, MongoDB (Mongoose ODM).
-* **AI Microservice:** Python 3.9+, Flask, PyTorch (ResNet-18 FAS), InsightFace, OpenCV.
-
-> [!TIP]  
-> A detailed overview of the project structure can be found in the [FOLDER_STRUCTURE.md](file:///c:/Users/vinhp/OneDrive/M%C3%A1y%20t%C3%ADnh/Hotel_Check-in_System/FOLDER_STRUCTURE.md) file.
-
----
-
-## 🛠️ Installation & Setup
+## 💻 Installation & Setup
 
 ### 📋 Prerequisites
 * **Node.js** (Recommended: v18 or higher)
@@ -97,9 +63,6 @@ This microservice processes heavy AI tasks like liveness detection and face embe
    ```bash
    python BackendServer.py
    ```
-   > [!IMPORTANT]  
-   > Upon the first launch, the InsightFace library will automatically download the `buffalo_l` face analysis models. Please ensure a stable internet connection. The AI microservice server will run on `http://localhost:5000`.
-
 ---
 
 ### Step 3: Set up the Node.js Backend Server
@@ -150,5 +113,11 @@ This is the interactive client-side user interface.
 
 ---
 
-## 🏆 Contributors
-This project was developed by **Chau Quoc Vinh** (Group 2) as a practical application for the Computer Vision (CV) course. For any issues or feature requests, feel free to open a Pull Request or file an Issue on the official repository.
+## 🤝 Contributors
+- Châu Quốc Vinh
+  + [Github](https://github.com/chauquocvinh2234)
+  + [Gmail](vinhit220304@gmail.com)
+- Vũ Trọng Nghĩa
+  + [Github](https://github.com/TrongNghia041104)
+  + [Gmail](nghia.hpotaku04@gmail.com)
+- Trần Đặng Thiên Phúc
