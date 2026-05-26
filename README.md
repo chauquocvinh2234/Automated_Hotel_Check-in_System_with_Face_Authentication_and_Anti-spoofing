@@ -122,11 +122,11 @@ This is the interactive client-side user interface.
 The system is engineered following a **Microservices Architecture** to guarantee clean isolation between standard business logic and compute-heavy AI tasks. 
 
 ### 1. High-Level Architecture Diagram
-![System Architecture Diagram](Images/system_architecture.jpg)
+![System Architecture Diagram](assets/system_architecture.jpg)
 
 ### 2. Funnel-based AI Processing Pipeline
 To optimize processing speed, the system integrates **Google MediaPipe** on the client side to track and crop faces directly in the browser (~22 FPS). Once sent to the server, the image passes through a sequential funnel pipeline:
-![FAS and ArcFace Integrated Pipeline](Images/pipeline_workflow.jpg)
+![FAS and ArcFace Integrated Pipeline](assets/pipeline_workflow.jpg)
 
 * **Step 1:** The FAS module validates if the face is live. If a spoof attack is detected (threshold score > 0.620), the pipeline terminates immediately with a `403 Forbidden` status to conserve server computing power.
 * **Step 2:** Only verified "Real" faces are passed to the ArcFace module to extract the 512-D embedding and run a Cosine Similarity match against the registration templates stored in MongoDB.
@@ -152,16 +152,16 @@ The 2x2 comparison matrix below visualizes the cosine similarity distributions a
 
 | Evaluation Metric | Baseline (Softmax Loss) | Proposed (ArcFace Loss) |
 | :---: | :---: | :---: |
-| **Similarity Histogram** | <img src="Images/lfw_softmax_histogram.jpg" width="400" alt="LFW Softmax Histogram"> | <img src="Images/lfw_arcface_histogram.jpg" width="400" alt="LFW ArcFace Histogram"> |
-| **t-SNE Clustering** | <img src="Images/lfw_softmax_tsne.jpg" width="400" alt="LFW Softmax t-SNE"> | <img src="Images/lfw_arcface_tsne.jpg" width="400" alt="LFW ArcFace t-SNE"> |
+| **Similarity Histogram** | <img src="assets/lfw_softmax_histogram.jpg" width="400" alt="LFW Softmax Histogram"> | <img src="assets/lfw_arcface_histogram.jpg" width="400" alt="LFW ArcFace Histogram"> |
+| **t-SNE Clustering** | <img src="assets/lfw_softmax_tsne.jpg" width="400" alt="LFW Softmax t-SNE"> | <img src="assets/lfw_arcface_tsne.jpg" width="400" alt="LFW ArcFace t-SNE"> |
 
 #### B. Celebrity Face Images (Kaggle Dataset) Performance
 The evaluation matrix below demonstrates the model robustness and domain generalization capabilities on the independent Celebrity Face Images dataset:
 
 | Evaluation Metric | Baseline (Softmax Loss) | Proposed (ArcFace Loss) |
 | :---: | :---: | :---: |
-| **Similarity Histogram** | <img src="Images/cbf_softmax_histogram.jpg" width="400" alt="CBF Softmax Histogram"> | <img src="Images/cbf_arcface_histogram.jpg" width="400" alt="CBF ArcFace Histogram"> |
-| **t-SNE Clustering** | <img src="Images/cbf_softmax_tsne.jpg" width="400" alt="CBF Softmax t-SNE"> | <img src="Images/cbf_arcface_tsne.jpg" width="400" alt="CBF ArcFace t-SNE"> |
+| **Similarity Histogram** | <img src="assets/cbf_softmax_histogram.jpg" width="400" alt="CBF Softmax Histogram"> | <img src="assets/cbf_arcface_histogram.jpg" width="400" alt="CBF ArcFace Histogram"> |
+| **t-SNE Clustering** | <img src="assets/cbf_softmax_tsne.jpg" width="400" alt="CBF Softmax t-SNE"> | <img src="assets/cbf_arcface_tsne.jpg" width="400" alt="CBF ArcFace t-SNE"> |
 
 #### C. Anti-spoofing Demos
 | Scenario 1: Real-face | Scenario 2: Fake-face |
@@ -187,8 +187,6 @@ The table below details the execution time benchmarks measured end-to-end on our
 Hotel_Check-in_System/
 ├── FOLDER_STRUCTURE.md                             # Project folder structure description (this file)
 ├── .gitignore                                      # Root Git ignore rules
-├── 422001503101_Nhom2_UngDungXacThucKhuonMat...pdf # Project documentation report (PDF)
-├── 422001503101_Nhom2_UngDungXacThucKhuonMat...pptx# Project presentation slide (PPTX)
 └── FinalProject_CV/                                # Main Computer Vision & Web Application folder
     ├── FaceAntiSpoofing/                           # Jupyter Notebook for Face Anti-Spoofing Model training
     │   └── FAS_Model.ipynb                         # Model development, EDA and training pipeline
